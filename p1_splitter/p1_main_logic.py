@@ -86,7 +86,6 @@ class EvenOddSeparator:
 
         print("\n" + "-" * 40)
 
-
         print(f"{self.GREEN}[ ODD ARCHIVE ]{self.RESET}")
         o_file = open('odd_numbers.txt', 'r')
         odd_content = o_file.read().strip().replace('\n', ', ')
