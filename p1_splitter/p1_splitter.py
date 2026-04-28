@@ -22,5 +22,22 @@ class EvenOddSeparator:
             with open(self.input_file, 'w') as f:
                 f.write("10\n21\n32\n43\n54\n65")
         return True
+# Add to separator_logic.py
+    def export_results(self, evens, odds):
+        self._header("SAVING ARCHIVES")
+
+        # Writing Even File
+        e_file = open('even.txt', 'w')
+        for n in evens:
+            e_file.write(str(n) + "\n")
+        e_file.close()
+
+        # Writing Odd File
+        o_file = open('odd.txt', 'w')
+        for n in odds:
+            o_file.write(str(n) + "\n")
+        o_file.close()
+
+        print(f"even.txt created |odd.txt created")
 
 
