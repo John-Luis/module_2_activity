@@ -1,4 +1,4 @@
-from main_logic import EvenOddSeparator
+from p1_main_logic import EvenOddSeparator
 
 def run():
     engine = EvenOddSeparator('numbers.txt')
