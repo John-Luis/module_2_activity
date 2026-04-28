@@ -19,3 +19,8 @@ def start_application():
     print(f"{CYAN}{'=' * 55}{RESET}")
     print(f"{BOLD}{WHITE}   OFFICIAL STUDENT GWA TRACKER - ACADEMIC YEAR 2026{RESET}")
     print(f"{CYAN}{'=' * 55}{RESET}")
+
+    # Simple Loading Bar that i found in the internet
+    for i in range(1, 11):
+        print(f"\rProcessing: [{'█' * i}{'░' * (10 - i)}]", end="")
+        time.sleep(0.1)
