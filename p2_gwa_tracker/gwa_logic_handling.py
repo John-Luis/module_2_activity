@@ -1,6 +1,6 @@
 import os
 
-class GWAProcessor:
+class gwa_logic:
     def __init__(self, filename):
         self.filename = filename
 
@@ -16,9 +16,8 @@ class GWAProcessor:
         # Direct stream processing
         with open(self.filename, 'r') as student_data:
             for current_row in student_data:
-             
-                entry = current_row.strip()
 
+                entry = current_row.strip()
 
                 if not entry:
                     continue
