@@ -47,7 +47,7 @@ class EvenOddSeparator:
                     odds.append(num)
         file.close()  # <--- CRITICAL: Manual closing
 
-        print(f"{self.GREEN}✔️ Processed {len(evens) + len(odds)} items.{self.RESET}")
+        print(f"{self.GREEN} Processed {len(evens) + len(odds)} items.{self.RESET}")
         return evens, odds
 
 # Add to separator_logic.py
@@ -68,4 +68,23 @@ class EvenOddSeparator:
 
         print(f"even_numbers.txt created | odd_numbers.txt created")
 
+    def show_summary(self):
+        self._header("ARCHIVE SUMMARY")
+
+        print(f"{self.GREEN}[ EVEN ARCHIVE ]{self.RESET}")
+        e_file = open('even_numbers.txt', 'r')
+        even_content = e_file.read().strip().replace('\n', ', ')
+        print(even_content if even_content else "No data.")
+        e_file.close()
+
+        print("\n" + "-" * 40)
+
+
+        print(f"{self.GREEN}[ ODD ARCHIVE ]{self.RESET}")
+        o_file = open('odd_numbers.txt', 'r')
+        odd_content = o_file.read().strip().replace('\n', ', ')
+        print(odd_content if odd_content else "No data.")
+        o_file.close()
+
+        print(f"\n{self.CYAN}{'=' * 40}{self.RESET}")
 
