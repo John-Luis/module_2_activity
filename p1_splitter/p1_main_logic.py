@@ -53,8 +53,6 @@ class EvenOddSeparator:
         print(f"{self.GREEN} Successfully processed {len(evens) + len(odds)} items.{self.RESET}")
         return evens, odds
 
-
-
     def export_results(self, evens, odds):
         self._header("SAVING ARCHIVES")
 
@@ -82,6 +80,7 @@ class EvenOddSeparator:
         e_file.close()
 
         print("\n" + "-" * 40)
+
 
         print(f"{self.GREEN}[ ODD ARCHIVE ]{self.RESET}")
         o_file = open('odd_numbers.txt', 'r')
