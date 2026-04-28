@@ -7,4 +7,16 @@ class MathEngine:
         self.target_file = target_file
         self.CYAN = '\033[96m'
         self.GREEN = '\033[92m'
-        self.RESET = '\033[0m'      
+        self.RESET = '\033[0m'
+
+    def _get_numbers(self):
+        nums = []
+        file = open(self.target_file, 'r')
+        content = file.read()  # Read everything as one string
+        file.close()
+
+        # Split by comma OR whitespace, then convert to int
+        raw_data = content.replace(',', ' ').split()
+        for item in raw_data:
+            nums.append(int(item))
+        return nums
