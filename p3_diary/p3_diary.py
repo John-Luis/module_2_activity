@@ -1,5 +1,6 @@
 import os
 from datetime import datetime
+import time
 
 class LifeVault:
     def __init__(self, target_name):
@@ -18,3 +19,8 @@ class LifeVault:
             # Adds a visual header for the date
             f.write(f"\n--- LOG ENTRY: {self.today} ---\n")
             f.write("\n".join(self.vault) + "\n")
+
+    def start_session():
+        # Style Config
+        CONSOLE_BAR = "\033[97m\033[40m"
+        CYAN, YELLOW, BOLD, RESET = "\033[96m", "\033[93m", "\033[1m", "\033[0m"
