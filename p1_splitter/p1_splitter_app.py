@@ -3,7 +3,7 @@ from main_logic import EvenOddSeparator
 
 
 def run():
-    engine = EvenOddSeparator('numbers.txt')
+    engine = EvenOddSeparator('.txt')
 
     # 1. Sort the numbers
     evens, odds = engine.process_data()
