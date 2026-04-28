@@ -40,4 +40,16 @@ def start_application():
     }
     df = pd.DataFrame(data)
 
+    # 2. Display Result
+    print(f"{GREEN}{BOLD}[DONE] ANALYSIS COMPLETE{RESET}")
+    print(f"{WHITE}{'-' * 55}{RESET}")
+
+    # We use to_string(index=False) to hide the row numbers (0, 1, 2)
+    print(df.to_string(index=False))
+
+    print(f"{WHITE}{'-' * 55}{RESET}\n")
+
+
+if __name__ == "__main__":
+    start_application()
 
