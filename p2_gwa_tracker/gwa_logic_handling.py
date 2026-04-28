@@ -54,5 +54,4 @@ class gwa_logic:
                     "GWA": float(info[1])
                 })
 
-        # We pass the function name instead of a lambda
         return sorted(all_students, key=get_gwa_value)
