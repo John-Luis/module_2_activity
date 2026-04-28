@@ -5,6 +5,7 @@ class LifeVault:
     def __init__(self, target_name):
         self.target_name = target_name
         self.vault = []
+        self.today = datetime.now().strftime("%B %d, %Y")
 
     def add_line(self, text):
         # Basic addition to the buffer
