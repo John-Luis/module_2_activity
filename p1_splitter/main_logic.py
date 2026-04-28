@@ -22,22 +22,50 @@ class EvenOddSeparator:
             with open(self.input_file, 'w') as f:
                 f.write("10\n21\n32\n43\n54\n65")
         return True
+
+    def process_data(self):
+        self._header("DATA PROCESSING")
+        evens = []
+        odds = []
+
+        # Manual file existence check
+        if not os.path.exists(self.input_file):
+            print("⚠️ numbers.txt missing. Generating...")
+            temp = open(self.input_file, 'w')
+            temp.write("10\n15\n20\n25\n30")
+            temp.close()
+
+        # MANUAL OPEN AND CLOSE
+        file = open(self.input_file, 'r')
+        for line in file:
+            line = line.strip()
+            if line:
+                num = int(line)
+                if num % 2 == 0:
+                    evens.append(num)
+                else:
+                    odds.append(num)
+        file.close()  # <--- CRITICAL: Manual closing
+
+        print(f"{self.GREEN}✔️ Processed {len(evens) + len(odds)} items.{self.RESET}")
+        return evens, odds
+
 # Add to separator_logic.py
     def export_results(self, evens, odds):
         self._header("SAVING ARCHIVES")
 
         # Writing Even File
-        e_file = open('even.txt', 'w')
+        e_file = open('even_numbers.txt', 'w')
         for n in evens:
             e_file.write(str(n) + "\n")
         e_file.close()
 
         # Writing Odd File
-        o_file = open('odd.txt', 'w')
+        o_file = open('odd_numbers.txt', 'w')
         for n in odds:
             o_file.write(str(n) + "\n")
         o_file.close()
 
-        print(f"even.txt created |odd.txt created")
+        print(f"even_numbers.txt created | odd_numbers.txt created")
 
 
