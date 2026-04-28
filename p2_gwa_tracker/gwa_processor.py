@@ -43,7 +43,7 @@ def start_application():
     # By importing pandas, because the dataframe function is there
 
     data = {
-        "Category": ["Total Scanned", "Highest GWA", "Top Scholar"],
+        "Category": ["Total Scanned", "Highest GWA", "Top Student"],
         "Value": [total, gwa, name.upper()]
     }
     df = pd.DataFrame(data)
@@ -56,6 +56,27 @@ def start_application():
     type_text(df.to_string(index=False))
 
     type_text(f"{WHITE}{'-' * 55}{RESET}\n")
+
+    #New Section: Full List Registry
+    type_text(f"\n{CYAN}[SYSTEM] GENERATING FULL ACADEMIC REGISTRY...{RESET}", 0.04)
+    time.sleep(0.5)
+
+    # Get the data and convert to DataFrame
+    full_data = analyzer.get_full_registry()
+    full_df = pd.DataFrame(full_data)
+
+    print(f"\n{WHITE}{'=' * 55}{RESET}")
+    print(f"{BOLD}           COMPLETE STUDENT RANKING{RESET}")
+    print(f"{WHITE}{'=' * 55}{RESET}")
+
+    # Display the full dataframe
+    if not full_df.empty:
+        print(full_df.to_string(index=True)) # index=True shows the rank (0, 1, 2...)
+    else:
+        print(f"{YELLOW}No records found in database.{RESET}")
+
+    print(f"{WHITE}{'-' * 55}{RESET}")
+    type_text(f"{GREEN}Total Registry Count: {len(full_df)} students listed.{RESET}", 0.02)
 
 if __name__ == "__main__":
     start_application()
