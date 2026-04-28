@@ -45,12 +45,12 @@ class EvenOddSeparator:
                     evens.append(num)
                 else:
                     odds.append(num)
-        file.close()  # <--- CRITICAL: Manual closing
+        file.close()  
 
         print(f"{self.GREEN} Processed {len(evens) + len(odds)} items.{self.RESET}")
         return evens, odds
 
-# Add to separator_logic.py
+
     def export_results(self, evens, odds):
         self._header("SAVING ARCHIVES")
 
