@@ -9,7 +9,8 @@ def start_session():
     manager = LifeVault("mylife.txt")
     os.system('cls' if os.name == 'nt' else 'clear')
 
-    print(f"{CONSOLE_BAR}{BOLD}  SYSTEM BOOT: {manager.today.upper()}  {RESET}\n")
+    print(f"{CONSOLE_BAR}{BOLD}SYSTEM BOOT: {manager.today.upper()}{RESET}")
+    print(f"{CONSOLE_BAR}{BOLD}Welcome, User! {RESET}\n")
 
     while True:
         content = input(f"{CYAN}Enter line: {RESET}")
