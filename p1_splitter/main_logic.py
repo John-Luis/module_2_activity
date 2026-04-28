@@ -36,6 +36,12 @@ class EvenOddSeparator:
 
         # MANUAL OPEN AND CLOSE
         with open(self.input_file, 'r') as file:
+            for line_num, line in enumerate(file, 1):
+                clean_line = line.strip()
+
+                # Skip empty lines silently
+                if not clean_line:
+                    continue
 
 
     def export_results(self, evens, odds):
