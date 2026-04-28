@@ -1,4 +1,3 @@
-# math_logic.py
 import os
 
 class MathEngine:
@@ -42,3 +41,25 @@ class MathEngine:
 
     def print_summary(self):
         print(f"\n{self.CYAN}[ ARCHIVE SUMMARY ]{self.RESET}")
+        # Process step by step for summary.
+        f1 = open('double.txt', 'r')
+        # 1. Read the raw text
+        raw_doubles = f1.read()
+        # 2. Remove extra spaces at the ends
+        clean_doubles = raw_doubles.strip()
+        # 3. Turn the vertical list into a horizontal comma list
+        horizontal_doubles = clean_doubles.replace('\n', ', ')
+
+        print(f"SQUARES: {horizontal_doubles}")
+        f1.close()
+
+        print("-" * 40)
+
+        # --- Processing Triples (Cubes) ---
+        f2 = open('triple.txt', 'r')
+        raw_triples = f2.read()
+        clean_triples = raw_triples.strip()
+        horizontal_triples = clean_triples.replace('\n', ', ')
+
+        print(f"CUBES:   {horizontal_triples}")
+        f2.close()
