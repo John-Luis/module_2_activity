@@ -13,3 +13,5 @@ def start_application():
 
     # Using 'gwa_function' since it is the class name for the importing.
     analyzer = gwa_function('students.txt')
+    # Refresh the terminal screen
+    os.system('cls' if os.name == 'nt' else 'clear')
