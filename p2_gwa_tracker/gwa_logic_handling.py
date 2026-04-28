@@ -34,3 +34,25 @@ class gwa_logic:
                     top_student["gwa"] = current_gwa
 
         return top_student["name"], top_student["gwa"], processed_total
+
+    def get_full_registry(self):
+        all_students = []
+        if not os.path.exists(self.filename):
+            return []
+
+        def get_gwa_value(student_dict):
+            return student_dict["GWA"]
+
+        with open(self.filename, 'r') as student_data:
+            for current_row in student_data:
+                entry = current_row.strip()
+                if not entry: continue
+
+                info = entry.rsplit(' ', 1)
+                all_students.append({
+                    "STUDENT NAME": info[0].upper(),
+                    "GWA": float(info[1])
+                })
+
+        # We pass the function name instead of a lambda
+        return sorted(all_students, key=get_gwa_value)
