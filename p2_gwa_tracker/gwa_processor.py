@@ -15,3 +15,7 @@ def start_application():
     analyzer = gwa_function('students.txt')
     # Refresh the terminal screen
     os.system('cls' if os.name == 'nt' else 'clear')
+
+    print(f"{CYAN}{'=' * 55}{RESET}")
+    print(f"{BOLD}{WHITE}   OFFICIAL STUDENT GWA TRACKER - ACADEMIC YEAR 2026{RESET}")
+    print(f"{CYAN}{'=' * 55}{RESET}")
