@@ -24,7 +24,7 @@ class MathEngine:
     def run_engine(self):
         print(f"{self.CYAN}--- STARTING MATH ENGINE ---{self.RESET}")
         data = self._get_numbers()
-        
+
         d_file = open('double.txt', 'w')
         t_file = open('triple.txt', 'w')
 
@@ -39,3 +39,6 @@ class MathEngine:
         d_file.close()
         t_file.close()
         print(f"{self.GREEN}✔️ double.txt and triple.txt generated.{self.RESET}")
+
+    def print_summary(self):
+        print(f"\n{self.CYAN}[ ARCHIVE SUMMARY ]{self.RESET}")
