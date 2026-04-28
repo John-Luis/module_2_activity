@@ -11,7 +11,7 @@ def start_application():
     WHITE = "\033[97m"
     BOLD = "\033[1m"
     RESET = "\033[0m"
-
+    
     # Using 'gwa_function' since it is the class name for the importing.
     analyzer = gwa_function('students.txt')
     # Refresh the terminal screen
@@ -48,7 +48,6 @@ def start_application():
     print(df.to_string(index=False))
 
     print(f"{WHITE}{'-' * 55}{RESET}\n")
-
 
 if __name__ == "__main__":
     start_application()
