@@ -9,13 +9,29 @@ class GWAProcessor:
         if not os.path.exists(self.filename):
             return "File does not exist or missing", 0.0 ,0
 
-        top_name = "None"
-        best_grade = 5.0
-        cleaned_lines = []
+        # instead of using lists, i used a dict.. so it is more organized and usable.
+        top_student= {"name": "None", "gwa": 5.0}
+        processed_total = 0
 
-        with open(self.filename, "r") as file:
-            for line in file:
-                stripped_line = line.strip()
+        # Direct stream processing
+        with open(self.filename, 'r') as student_data:
+            for current_row in student_data:
+                # Clean the line
+                entry = current_row.strip()
 
-                if stripped_line:
-                    cleaned_lines.append(stripped_line)
+                # Guard clause to skip empty space
+                if not entry:
+                    continue
+
+                # Parse data
+                info = entry.rsplit(' ', 1)
+                full_name = info[0]
+                current_gwa = float(info[1])
+                processed_total += 1
+
+                # Update winner if current GWA is better (lower)
+                if current_gwa < top_student["gwa"]:
+                    top_student["name"] = full_name
+                    top_student["gwa"] = current_gwa
+
+        return top_student["name"], top_student["gwa"], processed_total
