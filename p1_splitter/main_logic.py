@@ -1,4 +1,3 @@
-# separator_logic.py
 import os
 
 class EvenOddSeparator:
@@ -30,7 +29,7 @@ class EvenOddSeparator:
 
         # Manual file existence check
         if not os.path.exists(self.input_file):
-            print("⚠️ numbers.txt missing. Generating...")
+            print("numbers.txt missing. Generating...")
             temp = open(self.input_file, 'w')
             temp.write("10\n15\n20\n25\n30")
             temp.close()
@@ -45,11 +44,10 @@ class EvenOddSeparator:
                     evens.append(num)
                 else:
                     odds.append(num)
-        file.close()  
+        file.close()
 
         print(f"{self.GREEN} Processed {len(evens) + len(odds)} items.{self.RESET}")
         return evens, odds
-
 
     def export_results(self, evens, odds):
         self._header("SAVING ARCHIVES")
