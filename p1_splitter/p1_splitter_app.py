@@ -1,9 +1,7 @@
-# app.py
 from main_logic import EvenOddSeparator
 
-
 def run():
-    engine = EvenOddSeparator('.txt')
+    engine = EvenOddSeparator('numbers.txt')
 
     # 1. Sort the numbers
     evens, odds = engine.process_data()
@@ -15,7 +13,6 @@ def run():
     engine.show_summary()
 
     print("\n\033[1m[ SYSTEM SECURED & COMPLETE ]\033[0m")
-
 
 if __name__ == "__main__":
     run()
