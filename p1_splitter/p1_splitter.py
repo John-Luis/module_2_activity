@@ -23,35 +23,4 @@ class EvenOddSeparator:
                 f.write("10\n21\n32\n43\n54\n65")
         return True
 
-    def _header(self, text):
-        print(f"\n{self.CYAN}{'='*45}")
-        print(f" {text.center(43)}")
-        print(f"{'='*45}{self.RESET}")
 
-
-def process_data(self):
-    self._header("DATA PROCESSING")
-    evens = []
-    odds = []
-
-    # Manual file existence check
-    if not os.path.exists(self.input_file):
-        print("numbers.txt missing. Generating...")
-        temp = open(self.input_file, 'w')
-        temp.write("10\n15\n20\n25\n30")
-        temp.close()
-
-    # MANUAL OPEN AND CLOSE
-    file = open(self.input_file, 'r')
-    for line in file:
-        line = line.strip()
-        if line:
-            num = int(line)
-            if num % 2 == 0:
-                evens.append(num)
-            else:
-                odds.append(num)
-    file.close()  # <--- CRITICAL: Manual closing
-
-    print(f"{self.GREEN} Processed {len(evens) + len(odds)} items.{self.RESET}")
-    return evens, odds
