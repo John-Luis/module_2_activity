@@ -1,7 +1,7 @@
 import time
 import os
 import sys # for the typewriter font
-from gwa_logic_handling import gwa_logic as gwa_function
+from p2_main_logic import gwa_logic as gwa_function
 import pandas as pd # Import pandas for the DataFrame
 
 def type_text(text, speed=0.03):
