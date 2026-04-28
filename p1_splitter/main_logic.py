@@ -39,6 +39,20 @@ class EvenOddSeparator:
             for line_num, line in enumerate(file, 1):
                 clean_line = line.strip()
 
+                try:
+                    num = int(clean_line)
+                    if num % 2 == 0:
+                        evens.append(num)
+                    else:
+                        odds.append(num)
+                except ValueError:
+                    # This catches letters, symbols, or decimals
+                    print(
+                        f"{self.YELLOW}[!] ERROR: Line {line_num} ('{clean_line}') is not a valid integer. Skipping...{self.RESET}")
+
+                print(f"{self.GREEN} Successfully processed {len(evens) + len(odds)} items.{self.RESET}")
+                return evens, odds
+
                 # Skip empty lines silently
                 if not clean_line:
                     continue
