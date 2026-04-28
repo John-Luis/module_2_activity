@@ -16,10 +16,10 @@ class GWAProcessor:
         # Direct stream processing
         with open(self.filename, 'r') as student_data:
             for current_row in student_data:
-                # Clean the line
+             
                 entry = current_row.strip()
 
-                # Guard clause to skip empty space
+
                 if not entry:
                     continue
 
@@ -29,7 +29,7 @@ class GWAProcessor:
                 current_gwa = float(info[1])
                 processed_total += 1
 
-                # Update winner if current GWA is better (lower)
+                # Update top_student if current GWA is better (lower)
                 if current_gwa < top_student["gwa"]:
                     top_student["name"] = full_name
                     top_student["gwa"] = current_gwa
