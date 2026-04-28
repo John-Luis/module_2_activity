@@ -1,5 +1,6 @@
 import time
 import os
+import sys # for the typewriter font 
 from gwa_logic_handling import gwa_logic as gwa_function
 import pandas as pd # Import pandas for the DataFrame
 
@@ -11,7 +12,7 @@ def start_application():
     WHITE = "\033[97m"
     BOLD = "\033[1m"
     RESET = "\033[0m"
-    
+
     # Using 'gwa_function' since it is the class name for the importing.
     analyzer = gwa_function('students.txt')
     # Refresh the terminal screen
