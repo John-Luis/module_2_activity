@@ -1,8 +1,15 @@
 import time
 import os
-import sys # for the typewriter font 
+import sys # for the typewriter font
 from gwa_logic_handling import gwa_logic as gwa_function
 import pandas as pd # Import pandas for the DataFrame
+
+def type_text(text, speed=0.03):
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(speed)
+    print()  # Final newline
 
 def start_application():
     # Visual UI Colors
@@ -18,9 +25,9 @@ def start_application():
     # Refresh the terminal screen
     os.system('cls' if os.name == 'nt' else 'clear')
 
-    print(f"{CYAN}{'=' * 55}{RESET}")
-    print(f"{BOLD}{WHITE}   OFFICIAL STUDENT GWA TRACKER - ACADEMIC YEAR 2026{RESET}")
-    print(f"{CYAN}{'=' * 55}{RESET}")
+    type_text(f"{CYAN}{'=' * 55}{RESET}")
+    type_text(f"{BOLD}{WHITE}   OFFICIAL STUDENT GWA TRACKER - ACADEMIC YEAR 2026{RESET}")
+    type_text(f"{CYAN}{'=' * 55}{RESET}")
 
     # Simple Loading Bar that i found in the internet
     for i in range(1, 11):
@@ -42,13 +49,13 @@ def start_application():
     df = pd.DataFrame(data)
 
     # 2. Display Result
-    print(f"{GREEN}{BOLD}[DONE] ANALYSIS COMPLETE{RESET}")
-    print(f"{WHITE}{'-' * 55}{RESET}")
+    type_text(f"{GREEN}{BOLD}[DONE] ANALYSIS COMPLETE{RESET}")
+    type_text(f"{WHITE}{'-' * 55}{RESET}")
 
     # We use to_string(index=False) to hide the row numbers (0, 1, 2)
-    print(df.to_string(index=False))
+    type_text(df.to_string(index=False))
 
-    print(f"{WHITE}{'-' * 55}{RESET}\n")
+    type_text(f"{WHITE}{'-' * 55}{RESET}\n")
 
 if __name__ == "__main__":
     start_application()
