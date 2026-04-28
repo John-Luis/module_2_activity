@@ -50,12 +50,9 @@ class EvenOddSeparator:
                     print(
                         f"{self.YELLOW}[!] ERROR: Line {line_num} ('{clean_line}') is not a valid integer. Skipping...{self.RESET}")
 
-                print(f"{self.GREEN} Successfully processed {len(evens) + len(odds)} items.{self.RESET}")
-                return evens, odds
+        print(f"{self.GREEN} Successfully processed {len(evens) + len(odds)} items.{self.RESET}")
+        return evens, odds
 
-                # Skip empty lines silently
-                if not clean_line:
-                    continue
 
 
     def export_results(self, evens, odds):
