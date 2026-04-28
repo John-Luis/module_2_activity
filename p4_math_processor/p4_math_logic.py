@@ -20,3 +20,7 @@ class MathEngine:
         for item in raw_data:
             nums.append(int(item))
         return nums
+
+    def run_engine(self):
+        print(f"{self.CYAN}--- STARTING MATH ENGINE ---{self.RESET}")
+        data = self._get_numbers()
