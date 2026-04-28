@@ -3,11 +3,16 @@ from main_logic import EvenOddSeparator
 
 
 def run():
-    engine = EvenOddSeparator('random_generated_numbers.txt')
+    engine = EvenOddSeparator('numbers.txt')
 
-    # Run the steps
+    # 1. Sort the numbers
     evens, odds = engine.process_data()
+
+    # 2. Save them to files
     engine.export_results(evens, odds)
+
+    # 3. New: View the summary
+    engine.show_summary()
 
     print("\n\033[1m[ SYSTEM SECURED & COMPLETE ]\033[0m")
 
