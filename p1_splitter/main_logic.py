@@ -35,19 +35,8 @@ class EvenOddSeparator:
             temp.close()
 
         # MANUAL OPEN AND CLOSE
-        file = open(self.input_file, 'r')
-        for line in file:
-            line = line.strip()
-            if line:
-                num = int(line)
-                if num % 2 == 0:
-                    evens.append(num)
-                else:
-                    odds.append(num)
-        file.close()
+        with open(self.input_file, 'r') as file:
 
-        print(f"{self.GREEN} Processed {len(evens) + len(odds)} items.{self.RESET}")
-        return evens, odds
 
     def export_results(self, evens, odds):
         self._header("SAVING ARCHIVES")
